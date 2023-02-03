@@ -1,0 +1,41 @@
+<nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand">
+            <!-- <img src="mcmpng.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> -->
+            My Corrupted Mindset
+          </a>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            {% url 'index' as index_url %}
+            {% if request.path == index_url %}<a class="nav-link active">Home</a>
+            {% else %}<a class="nav-link" href="{% url 'index' %}">Home</a>{% endif %}
+          </li>
+          <li class="nav-item">
+            {% url 'about' as about_url %}
+            {% if request.path == about_url %}<a class="nav-link active">About</a>
+            {% else %}<a class="nav-link" href="{% url 'about' %}">About</a>{% endif %}
+          </li>
+          <li class="nav-item">
+            {% url 'contact' as contact_url %}
+            {% if request.path == contact_url %}<a class="nav-link active">Contact</a>
+            {% else %}<a class="nav-link" href="{% url 'contact' %}">Contact</a>{% endif %}
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            {% if user.is_authenticated %}
+            {% url 'profile' as profile_url %}
+            <a>Hello, {% if request.path == profile_url %}{{ user.username }}{% else %}<a href="{{ profile_url }}">{{user.username}}</a>{% endif %}</a>
+            <!-- put logout on profile insted! -->
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            </li>
+            {% else %}
+            <a class="nav-link" href="{% url 'login' %}">Login</a>
+            {% endif %}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
