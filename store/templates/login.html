@@ -1,0 +1,55 @@
+{% extends 'base.html'%} {% block content %}
+
+<div
+  class="container shadow pt-4 pb-4 ms-5"
+  style="margin-left: 6rem !important"
+>
+  <form action="/login" method="POST">
+    {% if error%}
+    <div class="alert alert-danger" role="alert">{{error}}</div>
+    {% endif %}
+    {% csrf_token %}
+    <div class="row">
+      <div class="h-100 d-flex align-items-center justify-content-center">
+        <div class="col-md-4">
+          <h4 class="text-muted">Log In</h4>
+          <br />
+          <div class="m-1">
+            <label class="text-muted"><small>Email:</small></label>
+            <input
+              class="form-control"
+              name="email"
+              type="email"
+              value="{{values.email}}"
+              placeholder="Email"
+            />
+          </div>
+          <div class="m-1">
+            <label class="text-muted"><small>Password :</small></label>
+            <input
+              class="form-control"
+              name="password"
+              type="password"
+              placeholder="Password"
+            />
+          </div>
+          <div class="mt-3">
+            <button
+              type="submit"
+              value="Login"
+              class="btn btn-outline-success m-1"
+            >
+              Login
+            </button>
+            <a href=""
+              ><button type="button" class="btn btn-outline-danger m-1">
+                Cancel
+              </button></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}
