@@ -1,4 +1,3 @@
-pip-upgrader
 asgiref==3.5.2
 automium==0.2.6
 automium-web==0.1.1
