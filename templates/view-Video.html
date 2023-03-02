@@ -1,0 +1,20 @@
+<head>
+{% for view in views %}
+
+    <title>{{view[2]}}</title>
+</head>
+<a href="/">Home</a>
+<div>
+    <video src="{{view[1]}}" width="680" style="  width: 50px;
+    width: 36%;
+    margin-left:61%;
+    position: absolute;
+    top: 10%;
+    margin-top: -3%;" controls></video>
+</div>
+<div><h1 style="margin-left:61%;position:absolute;top:10%;margin-top: -3%;">{{view[2]}}</h1></div>
+<div  style="margin-left:61%;position:absolute;top:10%;margin-top: 20%;">
+    <h1>Description</h1>
+    <h4>{{view[3]}}</h4>
+</div>
+{% endfor %}

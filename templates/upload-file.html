@@ -1,0 +1,28 @@
+{{msg}}
+</br>
+<a href="/">Home</a>
+<form action="/upload_file={{idTheUser}}" method="POST" enctype="multipart/form-data">
+    <a>add video mp4 file</a>
+    <br>
+    <br>
+    <input type="file" name="video" width="100" accept="*,.mp4" multiple required>
+    <br>
+    <br>
+    <h1>name Video</h1>
+    <br>
+    <input type="text" style="padding: 1% 10%;" maxlength="60" width="100" name="name-Video" required>
+    <br>
+    {{errorNameVideo}}
+    <br>
+    <h1>Description</h1>
+    <br>
+    <input type="text" style="  padding: 8% 10%;" maxlength="1500" width="300" name="Description" required>
+    <br>
+    {{errorDescription}}
+    <br>
+    <input type="submit" value="Submit">
+    <br>
+</form>
+</br>
+
+  

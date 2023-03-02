@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="./static/css/home">
+</head>
+<body>
+    <div class="container" id="nav">
+        <div class="overlay">
+            <div class="title">
+                <b>thistube</b>
+            </div>
+            <div class="login">
+                <a href="{{login}}">{{login}}</a>
+            </div>
+            <div class="signin">
+                <a href="{{singupAndLogout}}">{{singupAndLogout}}</a>
+            </div>
+        </div>
+    </div>  
+    <a href="upload_file={{IdTheUser}}">upload file</a> 
+    <center><div>
+        {%for i in select%}
+        <tr id="vid">
+            <td><a href="/watch={{i[0]}}"><video src="{{i[1]}}" width="320"></video></a></td>
+        </tr>
+        {% endfor %}
+    </div></center>
+<style>
+    #nav{
+   padding:10px;
+   display:inline-block;
+   margin:5px;
+   font-size:20px;
+}
+#nav a{
+    color:#92ff8f;
+}
+#nav a:hover{
+    background-color:#92ff8f;
+    color:white;
+}
+</style>
+</body>
+</html>

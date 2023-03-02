@@ -1,0 +1,20 @@
+<form action="/singup" method="POST" enctype="multipart/form-data">
+    email
+    <br>
+    <input type="email" name="email">
+    <br>
+    {{errorEmail}}
+    <br>
+    username
+    <br>
+    <input type="text" name="username">
+    <br>
+    <br>
+    passwerd
+    <br>
+    <input type="password" name="password">
+    <br>
+    {{errorPassword}}
+    <br>
+    <input type="submit" value="Submit">
+</form>
